@@ -1,0 +1,7 @@
+Drag Buildup (Fritz)
+	Upper Bound: Bunch of Cylinders
+	Lower Bound: everything airfoil
+T/O Performance (Matt)
+	Paper that I give
+Putting it on slides (Alberto)
+AVL drag + stability polars (Amira)
