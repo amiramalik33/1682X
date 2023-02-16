@@ -1,8 +1,0 @@
-satisficing: meeting the constraints (not optimization)
-close loop on wing area
-fully dialed in formula (numbers can change)
-constraint is cruise at solar power
-
-**satisfying stuff! so probs not optimizing anything
-
-**at the end is a "design recommendation"
