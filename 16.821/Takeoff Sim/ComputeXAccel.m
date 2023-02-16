@@ -4,7 +4,7 @@ V2 = dxdt^2;
 
 g = 9.8;
 Vto = (2*m*g/(cl* rho_A*S))^.5; %takeoff speed
-Vp  = 11.5; %planing speed hard coded cuz im lazy
+Vp  = 4.42; %planing speed hard coded cuz im lazy
 
 %approximating a decrease in cd during planing
 if dxdt >= Vp && cdA_b ~= 0 

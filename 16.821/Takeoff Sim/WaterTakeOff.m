@@ -4,8 +4,8 @@ clear all
 %% States Definition
 % State 1 is pre-planing
 % State 2 is planing, when x-speed reached planing speed, in m/s
-l = 6; %ft to meters
-minF = 1.5;
+l = 2; %ft to meters
+minF = 1;
 Vp = minF*((l*9.8)^.5);
 clear l minF
 Vp_kt = Vp*1.944; %m/s to knots
@@ -44,7 +44,7 @@ plot(x_distance, y_distance);
 hold on
 title("Takeoff Profile,Thrust = " + ComputeThrust(0) + " N")
 xlabel('distance, ft')
-ylabel('distance, m')
+ylabel('distance, ft')
 yline(50, '-',"50' ft Obstacle");
 
 h2 = figure(2);

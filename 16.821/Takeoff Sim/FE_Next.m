@@ -33,5 +33,4 @@ y_next = y + dydt*dt;
 %% Return Statement
 U_next = [t_next; x_next; y_next; dxdt_next; dydt_next];
 
-
 end
