@@ -2,14 +2,11 @@ close all
 clear all
 
 %% States Definition
-% State 1 is pre-planing
-% State 2 is planing, when x-speed reached planing speed, in m/s
-l = 2; %ft to meters
-minF = 1;
-Vp = minF*((l*9.8)^.5);
-clear l minF
-Vp_kt = Vp*1.944; %m/s to knots
+%State 1 is pre-planing
+%State 2 is planing, when x-speed reached planing speed, in m/s
 %State 3 is liftoff, when y-speed is non-zero
+p  = get_params(2); %use state 2 for takeoff speed, in graph below
+Vp = p("Vp");
 
 %% Initialize Simulation
 %time, x distance, y distance, x speed, y speed
@@ -55,22 +52,22 @@ ylabel('Air Speed, knots')
 hold on
 yyaxis right
 plot(x_distance, y_speed)
-xlabel('Ground track, ft')
+xlabel('Runway, ft')
 ylabel('Vertical Speed, fpm')
 
 h3 = figure(3);
+Vp_kt = Vp*1.944; %m/s to knots
+cl    = p("cl");
+rho_A = p("rho_A");
+S     = p("S");
+m     = p("m");
+g     = 9.8;
+Vto_kt = ((2*m*g/(cl* rho_A*S))^.5)*1.944; %takeoff speed in knots
 plot(time, x_speed)
 hold on
 title("Airspeed vs Time, Thrust = " + ComputeThrust(0) + " N")
 ylabel('Airspeed, knots')
 xlabel('Time, sec')
 yline(Vp_kt, '-',"Planing Speed");
-p = get_params(2);
-cl    = p("cl");
-rho_A = p("rho_A");
-S     = p("S");
-m     = p("m");
-g     = 9.8;
-Vto = ((2*m*g/(cl* rho_A*S))^.5)*1.944;
-yline(Vto, '-', "Takeoff Speed");
-clear p cl rho_A S m g
+yline(Vto_kt, '-', "Takeoff Speed");
+clear p cl rho_A S m g Vp

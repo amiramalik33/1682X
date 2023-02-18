@@ -11,6 +11,7 @@ rho_A = p("rho_A");
 rho_W = p("rho_W");
 S     = p("S");
 m     = p("m");
+Vp    = p("Vp");
 
 t    = U(1, end);
 x    = U(2, end);
@@ -20,7 +21,7 @@ dydt = U(5, end);
 FT = ComputeThrust(dxdt);
 
 t_next = t+dt;
-d2xdt2 = ComputeXAccel(dxdt, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, alpha, FT, cl);
+d2xdt2 = ComputeXAccel(dxdt, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, alpha, FT, cl, Vp);
 d2ydt2 = ComputeYAccel(dxdt, cl, m, rho_A, S, alpha, FT);
 
 %% Forward Euler

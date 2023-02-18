@@ -1,10 +1,9 @@
-function d2xdt2 = ComputeXAccel(dxdt, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, alpha, FT, cl)
+function d2xdt2 = ComputeXAccel(dxdt, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, alpha, FT, cl, Vp)
 
 V2 = dxdt^2;
 
 g = 9.8;
 Vto = (2*m*g/(cl* rho_A*S))^.5; %takeoff speed
-Vp  = 4.42; %planing speed hard coded cuz im lazy
 
 %approximating a decrease in cd during planing
 if dxdt >= Vp && cdA_b ~= 0 
