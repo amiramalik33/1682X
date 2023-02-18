@@ -2,9 +2,11 @@
 ## Summary
 All aerospace students at MIT take two capstones, one where you design a vehicle, and one where you build a version of it. This repository has all the code regarding optimization, simulation, and any other numerical analysis I did for the capstone, which was quite a bit!
 
-You can find the Critical Design Review we prepared at the end of the design phase [here](http://amiramalik.com/wp-content/uploads/2022/12/CDR_truncated.pdf).
+You can find the Critical Design Review we prepared at the end of the design phase in the 16.82 folder.
 
-You can find the Final Brief we prepared at the end of the build and design phase here.
+You can find the Final Brief we prepared at the end of the build and design phase in the 16.821 folder.
+
+The Peter Design .zip repository is what the TA of the class made in between the two semesters. In 16.82, we had designed a 70' wingspan solar electric amphibious ultralight airplane, but of course building such a large machine would be infeasible in one semester, so Peter Sharpe scaled the design down to a 12' drone. The work we did in 16.821 reflects that.
 
 ## 16.82
 This class was the design phase, held in Fall 2022. I was the Chief Engineer as well as the lead of Aerodynamics. And, having the most experience in the class with designing and building aircraft, I helped in all other teams as well.
