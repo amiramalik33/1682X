@@ -1,0 +1,34 @@
+CoDR
+	all of it other than solar panels
+
+PDR Aero
+	XFLR5 model & all decisions associated with making lifting surfaces design
+	drag build-up (Fritz did numbers for first iteration, but I guided him & did it)
+	T/O performance calcs (guided Alberto & Matt, but they coded/owned it)
+	Organized team aero
+	all of the fancy slides!!!!!!!!!!!! they look so NICE
+
+PDR Controls
+	The sizing cases for control surfaces, got them started on that
+	Cockpit system slide & all associated info
+	Controls overview (components, reasons why FBW, surfaces used)
+
+PDR Configuration
+	Guided team towards planing hull, tail angle, cruciform tail, high wing
+		(pics on chat from ipad)
+	Very much goaded Lauren & rest of team to come together to make the sketch
+
+DESIGN MEMO IDEAS:
+	Drag Build-up Approach
+	actual sizing cases for controls
+	structures loads cases
+	wing taper optimization
+	takeoff/landing dynamics angles (stall, incidence, fuselage, planing hull T/O, etc.)
+
+Each student will develop a memo to document the basis of some design decision that they were involved in. The memo should define the issues, concerns or requirements which drove the design decision, document the design and provide technical justification for that decision.
+The debrief is an opportunity for each student to demonstrate their understanding of the technical area that they have taken responsibility for or focused on. The discussion will be given individually in a meeting between the student and the engineering faculty. It will start with a review of the design decision memo followed by questions and discussion related to that 
+material. This material will be the main (but not the exclusive) focus of the Oral 
+Exam.
+
+**The undergraduate with the best technical contribution will be eligible for the James Means 
+Memorial Prize (bronze medallion + fame + $).

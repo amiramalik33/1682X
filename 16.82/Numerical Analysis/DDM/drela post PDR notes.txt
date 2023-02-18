@@ -1,0 +1,53 @@
+Drela Design Notes
+charlotte, matt, alberto, fritz, josh, jared, david, Michelle, Lauren, Andrew, Ethan, Mo
+Austen, Blake, Jax, Joey, Summer
+
+Need a step in fuselage
+Don't immediately curve fuselage behind it: seperation huge risk post-step
+step is relatively small
+Fuselage needs to balance forward of the step
+
+Fuselage ends, then becomes boom is a good design
+canopy = an airfoil (end is a trailing edge) 
+but need bouyancy in the back
+work out what the volume
+easier to manufacture & cheaper
+**really being pushed to do this, at every turn
+
+AR horizontal tail should be 10-ish (30-40% higher AR than in CAD)
+
+"TailDragger" but in water??? small water pylon at tail end
+
+bigger prop = better efficiency and less power, but need more torque
+	torque is what sizes weight for an electric motor
+	prop efficiency vs weight (related to torque), then pick the maximum of that curve
+	can make prop diameter, power for cruise, and weight of motor and pick maximum
+	power for flight write-up has this
+	at optimum, sensitivity is low by definition! so go up or down 10% is fine
+
+tail heavy design, so wing probably pretty behind of person (move wing to fix CG)
+battery should be close to seat and quite low (in crash, need load paths from heavy items)
+wing spar interfaces with bulkhead in fuselage 
+tail boom interfaces just below wing spar
+cl/cd from 3D analysis from XFLR5 (maybe 3deg is better?)
+
+just need no wingtip dragging on takeoff or water maneuver, that's it so small sponsons on wintip
+sizing case: wind picking up on the wingtip or pilot stepping in?
+if in water on takeoff: need fuselage shape: step, fancy, etc.
+retractable sponson: retract for takeoff, deploy for water maneuvering
+	if retractable: then make it an easy high displacement shape
+only extend during taxi (takeoff and landing without them, just keep wings level)
+sponson can extend from fuselage
+retract mid-takeoff roll?
+
+L/D = 17 is easily beaten: we can get up to 30!!
+**for aero drag, use Cd, not D
+Cd .033 is wayy to high
+do a drag buildup from an airfoil revolution (axis symmetric bodies cd is a paper)
+	paper on canvas!
+
+recline the body more
+estimate drag
+multiply side area by pi, that's wetted area
+motor pods! also a thing
+struts, sponson pods also axisymmetric

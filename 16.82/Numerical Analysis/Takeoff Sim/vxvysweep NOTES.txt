@@ -1,0 +1,8 @@
+vxvy sweep:
+
+make sure correct cl/cd/alpha values are in p before starting sim
+
+
+to find a speed at a particular cl/cd/alpha, run a x-axis FE to find when D=F, then that's the speed for that value (wait but does this actually work tho??)
+
+or... find drag at each speed and make sure it is less than FT..? probably this one
