@@ -6,7 +6,7 @@ You can find the Critical Design Review we prepared at the end of the design pha
 
 You can find the Final Brief we prepared at the end of the build and design phase in the 16.821 folder.
 
-The Peter Design .zip repository is what the TA of the class made in between the two semesters. In 16.82, we had designed a 70' wingspan solar electric amphibious ultralight airplane, but of course building such a large machine would be infeasible in one semester, so Peter Sharpe scaled the design down to a 12' drone. The work we did in 16.821 reflects that.
+In 16.82, we had designed a 70' wingspan solar electric amphibious ultralight airplane, but of course building such a large machine would be infeasible in one semester, so Peter Sharpe, our class TA, scaled the design down to a 12' drone. The work we did in 16.821 reflects the scaled design.
 
 ## 16.82
 This class was the design phase, held in Fall 2022. I was the Chief Engineer as well as the lead of Aerodynamics. And, having the most experience in the class with designing and building aircraft, I helped in all other teams as well.
