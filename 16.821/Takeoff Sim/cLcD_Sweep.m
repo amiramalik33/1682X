@@ -17,21 +17,23 @@ for i = 1:length(mod)
     %run simulation
     U = WaterTakeOff(p);
 
-    %store results
-    time =       U(1,:);
-    x_distance = U(2,:)*3.281; %m to feet
-    y_distance = U(3,:)*3.281;
-    x_speed =    U(4,:)*1.944; %m/s to knots
-    y_speed =    U(5,:)*196.9; %m/s to fpm
+    %store end value of each state variable
+    time =       U(1,end);
+    x_distance = U(2,end)*3.281; %m to feet
+    y_distance = U(3,end)*3.281;
+    x_speed =    U(4,end)*1.944; %m/s to knots
+    y_speed =    U(5,end)*196.9; %m/s to fpm
 
-    swept_time      = [swept_time, time(end)];
-    swept_xdis      = [swept_xdis, x_distance(end)];
-    swept_ydis      = [swept_ydis, y_distance(end)];
-    swept_xspeed    = [swept_xspeed, x_speed(end)];
-    swept_yspeed    = [swept_yspeed, y_speed(end)];
+    swept_time      = [swept_time, time];
+    swept_xdis      = [swept_xdis, x_distance];
+    swept_ydis      = [swept_ydis, y_distance];
+    swept_xspeed    = [swept_xspeed, x_speed];
+    swept_yspeed    = [swept_yspeed, y_speed];
+
+    clear U time x_distance y_distance x_speed y_speed p
 end
 
-
+clear i
 %% Plots
 
 h1 = figure(1);
