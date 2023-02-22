@@ -35,10 +35,23 @@ end
 
 clear i
 %% Plots
-
 h1 = figure(1);
+tiledlayout(2,1)
+
+nexttile
 plot(mod, swept_xdis, "-o");
 hold on
 title("Constant Thrust Runway Length vs Drag")
 xlabel('drag multiplier')
 ylabel('distance, ft')
+
+nexttile
+title("Airspeed & Time to TakeOff")
+yyaxis left
+plot(mod, swept_xspeed)
+ylabel('Air Speed, knots')
+hold on
+yyaxis right
+plot(mod, swept_time)
+xlabel('drag multiplier')
+ylabel('Time, sec')
