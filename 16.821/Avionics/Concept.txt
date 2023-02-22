@@ -1,0 +1,7 @@
+Main Loop:
+	All data is constantly being written to a shared data bus (array)
+
+Second Loop:
+	Read that array every tenth of a second (ie artificial delay), then write to the S/D card
+
+*This solves the I2C devices possibly being on different times and/or updating at different times and protects against waiting for a sensor to write something
