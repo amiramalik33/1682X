@@ -2,7 +2,29 @@ vxvy sweep:
 
 make sure correct cl/cd/alpha values are in p before starting sim
 
+to find a speed at a particular cl/cd/alpha, run a x-axis FE to find when D=F, then that's the speed for that value
 
-to find a speed at a particular cl/cd/alpha, run a x-axis FE to find when D=F, then that's the speed for that value (wait but does this actually work tho??)
+or... find drag at each speed and make sure it is less than FT..?
 
-or... find drag at each speed and make sure it is less than FT..? probably this one
+%calculate V for given angle and check if it results in lift
+for i = 1:length(alpha)
+    V_calc = real(((2*FT*cos(alpha(i)))/(rho_A*(S*cds(i)+cdA_f)))^.5);
+    if 2*m*g <= cl(i)*rho_A*S*(V_calc^2) %max ultralight speed 28m/s = 55knots
+        V = [V V_calc];
+    end
+end
+
+dt = .01;
+swept_T = []; swept_X = []; confirm = [];
+
+%% run simulation to climb 50' for a given speed
+for i = 1:length(V)
+    %time, x distance, y distance, x speed, y speed
+    U = [0;0;0;V(i);0];
+    while U(3, end) <= 16 %50 feet
+        U_next = VFE_Next(U, dt, p, FT);
+        U = [U,U_next];
+    end
+    swept_T = [swept_T, U(1, end)];
+    swept_X = [swept_X, U(2, end)];
+end
