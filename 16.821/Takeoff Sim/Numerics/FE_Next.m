@@ -1,17 +1,32 @@
-function U_next = FE_Next(U, dt, state)
+function U_next = FE_Next(U, dt, p)
 
-p = get_params(state);
+%constant parameters
+rho_A   = p("rho_A");
+rho_W   = p("rho_W");
+S       = p("S");
+m       = p("m");
+Vp      = p("Vp");
 
-alpha = p("alpha");
-cl    = p("cl");
-cds   = p("cds");
-cdA_b = p("cdA_b");
-cdA_f = p("cdA_f");
-rho_A = p("rho_A");
-rho_W = p("rho_W");
-S     = p("S");
-m     = p("m");
-Vp    = p("Vp");
+%dictionary magic
+alpha   = [p("alpha1"), p("alpha2"), p("alpha3")];
+cl      = [p("cl1"), p("cl2"), p("cl3")];
+cds     = [p("cds1"), p("cds2"), p("cds3")];
+cdA_b   = [p("cdA_b1"), p("cdA_b2"), p("cdA_b3")];
+cdA_f   = [p("cdA_f1"), p("cdA_f2"), p("cdA_f3")];
+
+if (U(4, end) <= Vp && U(5, end) <= 0.1) 
+    state = 1; %pre-planing
+elseif (U(4, end) > Vp && U(5, end) <= 0.1) 
+    state = 2; %is planing
+elseif (U(5, end) > 0.1) 
+    state = 3; %post-liftoff
+end
+
+alpha   = alpha(state);
+cl      = cl(state);
+cds     = cds(state);
+cdA_b   = cdA_b(state);
+cdA_f   = cdA_f(state);
 
 t    = U(1, end);
 x    = U(2, end);
