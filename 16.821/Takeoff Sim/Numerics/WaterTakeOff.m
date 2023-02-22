@@ -27,12 +27,14 @@ x_speed =    U(4,:)*1.944; %m/s to knots
 y_speed =    U(5,:)*196.9; %m/s to fpm
 % 
 % h1 = figure(1);
+% figure()
 % plot(x_distance, y_distance);
 % hold on
 % title("Takeoff Profile,Thrust = " + ComputeThrust(0) + " N")
 % xlabel('distance, ft')
 % ylabel('distance, ft')
 % yline(50, '-',"50' ft Obstacle");
+% xlim([0 250]);
 % 
 % h2 = figure(2);
 % title("Speed Profile,Thrust = " + ComputeThrust(0) + " N")

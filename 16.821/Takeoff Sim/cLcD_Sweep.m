@@ -6,7 +6,7 @@ swept_time = []; swept_xdis = []; swept_ydis = [];
 swept_xspeed = []; swept_yspeed = [];
 
 %modification values
-mod = [.8, .9, 1, 1.1, 1.2];
+mod = [.8, .9, 1, 1.1, 1.2, 1.3, 1.45];
 
 for i = 1:length(mod)
 
