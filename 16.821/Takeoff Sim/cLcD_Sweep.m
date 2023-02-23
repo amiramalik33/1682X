@@ -6,13 +6,13 @@ swept_time = []; swept_xdis = []; swept_ydis = [];
 swept_xspeed = []; swept_yspeed = [];
 
 %modification values
-mod = [.8, .9, 1, 1.1, 1.2, 1.3, 1.45];
+mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
 
 for i = 1:length(mod)
 
     %modify parameters
     p = get_params();
-    p = mod_params(p, mod(i));
+    p = mod_drag(p, mod(i));
 
     %run simulation
     U = WaterTakeOff(p);
@@ -35,17 +35,19 @@ end
 
 clear i
 %% Plots
-h1 = figure(1);
-tiledlayout(2,1)
+%h1 = figure(1);
+%tiledlayout(2,1)
 
-nexttile
+%nexttile
+h2 = figure(2);
 plot(mod, swept_xdis, "-o");
 hold on
 title("Constant Thrust Runway Length vs Drag")
 xlabel('drag multiplier')
 ylabel('distance, ft')
 
-nexttile
+%nexttile
+h3 = figure(3);
 title("Airspeed & Time to TakeOff")
 yyaxis left
 plot(mod, swept_xspeed)

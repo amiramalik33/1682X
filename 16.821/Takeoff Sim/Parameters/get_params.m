@@ -13,16 +13,17 @@ S = 1.5;        %m^2
 m = 6.581;      %kg
 
 % Fuselage Drag (hard-coded)
-% /64 since 1/4 scale model
-alpha   = [0, 2, 2]; %pre-plane angle, planing angle, climb angle
-cdA_air = .001;
-cdA_pln = .001;
-cdA_wtr = .001;
+alpha   = [0, 2, 3]; %pre-plane angle, planing angle, climb angle
+cdA_air = .004696; %Peter's RANS Fuselage, 0deg fixed Reynolds
+clA_air = .00125;  %Peter's RANS Fuselage, 0deg fixed Reynolds
+cdA_pln = .0005;   %Alberto's estimate, at trim angle
+clA_pln = 0;
+cdA_wtr = .0005;
 
 % Wing Drag (hard-coded)
-AOA   = linspace(0, 8, 9);
-cl_w  = linspace(.728, 1.51, 9);
-cds_w = linspace(.017, .055, 9);
+AOA   = linspace(0, 5, 6);
+cl_w  = linspace(.668, 1.11, 6);
+cds_w = linspace(.026, .06, 6);
 
 cl    = [cl_w(alpha(1)+1), cl_w(alpha(2)+1), cl_w(alpha(3)+1)];
 cds   = [cds_w(alpha(1)+1), cds_w(alpha(2)+1), cds_w(alpha(3)+1)];
