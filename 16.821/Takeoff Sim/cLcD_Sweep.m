@@ -6,13 +6,20 @@ swept_time = []; swept_xdis = []; swept_ydis = [];
 swept_xspeed = []; swept_yspeed = [];
 
 %modification values
-mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
+%mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
+high = .8;
+low  = 3;
+size = 30;
+mod1 = (high-low).*rand(size,1) + low;
+mod2 = (high-low).*rand(size,1) + low;
+clear high low
 
-for i = 1:length(mod)
+for i = 1:size
 
     %modify parameters
     p = get_params();
-    p = mod_drag(p, mod(i));
+    p = mod_drag(p, mod1(i));
+    p = mod_wing(p, mod2(i));
 
     %run simulation
     U = WaterTakeOff(p);
@@ -33,27 +40,74 @@ for i = 1:length(mod)
     clear U time x_distance y_distance x_speed y_speed p
 end
 
-clear i
+clear i size
 %% Plots
-%h1 = figure(1);
-%tiledlayout(2,1)
+h1 = figure(1);
+tiledlayout(2,2)
+[xq,yq] = meshgrid(-5:.1:5, -5:.1:5);
 
-%nexttile
-h2 = figure(2);
-plot(mod, swept_xdis, "-o");
+%time
+nexttile
+vq = griddata(mod1,mod2,swept_time,xq,yq);
+mesh(xq,yq,vq)
 hold on
-title("Constant Thrust Runway Length vs Drag")
-xlabel('drag multiplier')
-ylabel('distance, ft')
+scatter3(mod1, mod2, swept_time);
+hold on
+xlabel("parasitic drag modification");
+ylabel("induced drag modification");
+zlabel("time, seconds");
 
-%nexttile
-h3 = figure(3);
-title("Airspeed & Time to TakeOff")
-yyaxis left
-plot(mod, swept_xspeed)
-ylabel('Air Speed, knots')
+%runway length
+nexttile
+vq = griddata(mod1,mod2,swept_xdis,xq,yq);
+mesh(xq,yq,vq)
 hold on
-yyaxis right
-plot(mod, swept_time)
-xlabel('drag multiplier')
-ylabel('Time, sec')
+scatter3(mod1, mod2, swept_xdis);
+hold on
+xlabel("parasitic drag modification");
+ylabel("induced drag modification");
+zlabel("runway, feet");
+
+%airspeed
+nexttile
+vq = griddata(mod1,mod2,swept_xspeed,xq,yq);
+mesh(xq,yq,vq)
+hold on
+scatter3(mod1, mod2, swept_xspeed);
+hold on
+xlabel("parasitic drag modification");
+ylabel("induced drag modification");
+zlabel("airspeed, knots");
+
+%vertical speed
+nexttile
+vq = griddata(mod1,mod2,swept_yspeed,xq,yq);
+mesh(xq,yq,vq)
+hold on
+scatter3(mod1, mod2, swept_yspeed);
+hold on
+xlabel("parasitic drag modification");
+ylabel("induced drag modification");
+zlabel("vertical speed, fpm");
+
+
+% %OG mod plots (2D)
+% h1 = figure(1);
+% tiledlayout(2,1)
+% nexttile
+% plot(mod, swept_xdis, "-o");
+% hold on
+% title("Constant Thrust Runway Length vs Drag")
+% xlabel('drag multiplier')
+% ylabel('distance, ft')
+% nexttile
+% title("Airspeed & Time to TakeOff")
+% yyaxis left
+% plot(mod, swept_xspeed)
+% ylabel('Air Speed, knots')
+% hold on
+% yyaxis right
+% plot(mod, swept_time)
+% xlabel('drag multiplier')
+% ylabel('Time, sec')
+
