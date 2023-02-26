@@ -7,8 +7,8 @@ swept_xspeed = []; swept_yspeed = [];
 
 %modification values
 %mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
-high = .8;
-low  = 3;
+high = 3;
+low  = .8;
 size = 30;
 mod1 = (high-low).*rand(size,1) + low;
 mod2 = (high-low).*rand(size,1) + low;
