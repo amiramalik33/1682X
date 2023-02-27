@@ -1,5 +1,8 @@
 function parameters = get_params()
 
+%Simulation Parameters
+dt = .01;
+
 %Planing Parameters
 l = 2;      %planing length in meters
 minF = 1;   %Froude number
@@ -33,9 +36,9 @@ cdA_f = [.7*cdA_air, 1.1*cdA_air, cdA_air]; %cdA of "fuse" (fuselage above water
 %apparently you can't map arrays to dictionary keys, stupid memory
 keys = ["alpha1" "alpha2" "alpha3" "cl1" "cl2" "cl3" "cds1" "cds2" "cds3" ...
     "cdA_b1" "cdA_b2" "cdA_b3" "cdA_f1" "cdA_f2" "cdA_f3" ...
-    "rho_A" "rho_W" "S" "m", "Vp"];
+    "rho_A" "rho_W" "S" "m", "Vp", "dt"];
 
-values = [alpha*pi/180, cl, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, Vp];
+values = [alpha*pi/180, cl, cds, cdA_b, cdA_f, rho_A, rho_W, S, m, Vp, dt];
 
 parameters = dictionary(keys, values);
 
