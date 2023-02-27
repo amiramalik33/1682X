@@ -1,4 +1,12 @@
 # Simulation & Multi-Dimensional Optimization
+
+##Code Flow
+There will be an actual diagram soon.
+
+Run cLcDSweep, it creates parameters with get_params() and then modifies parameters using mod_drag() and mod_wing() using a standard probability distribution. For each run, it calls WaterTakeOff(parameters) and then gets the end time, distance, and speeds.
+
+WaterTakeOff is a forward euler 2D simulation. It calls FE_next which first gets the forces at a particular time by calling ComputeThrust, ComputeXAccel and ComputeYAccel, and then does the forward euler and returns the t+dt state to WaterTakeOff which will call FE_next until its run condition is satisfied (e.g. the aircraft reaches 50' altitude).
+
 ## Summary
 These scripts started off as a forward euler takeoff simulation and over the semester evolved into multi-dimensional optimization and monte carlo runs of the baseline simulation to find different sensitivities and coupling.
 
