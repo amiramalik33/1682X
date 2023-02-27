@@ -3,7 +3,7 @@ close all
 
 %initialize storage arrays
 swept_time = []; swept_xdis = []; swept_ydis = []; 
-swept_xspeed = []; swept_yspeed = [];
+swept_xspeed = []; swept_yspeed = []; swept_power = [];
 
 %modification values
 %mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
@@ -25,17 +25,21 @@ for i = 1:size
     U = WaterTakeOff(p);
 
     %store end value of each state variable
-    time =       U(1,end);
+    time       = U(1,end);
     x_distance = U(2,end)*3.281; %m to feet
     y_distance = U(3,end)*3.281;
-    x_speed =    U(4,end)*1.944; %m/s to knots
-    y_speed =    U(5,end)*196.9; %m/s to fpm
+    x_speed    = U(4,end)*1.944; %m/s to knots
+    y_speed    = U(5,end)*196.9; %m/s to fpm
+    instaPower = U(6,:); %instantaneous power at each dt, Watts/s
+    
+    power = sum(instaPower)*p("dt"); %Watts
 
     swept_time      = [swept_time, time];
     swept_xdis      = [swept_xdis, x_distance];
     swept_ydis      = [swept_ydis, y_distance];
     swept_xspeed    = [swept_xspeed, x_speed];
     swept_yspeed    = [swept_yspeed, y_speed];
+    swept_power     = [swept_power, power];
 
     clear U time x_distance y_distance x_speed y_speed p
 end
@@ -48,14 +52,14 @@ tiledlayout(2,2)
 
 %time
 nexttile
-vq = griddata(mod1,mod2,swept_time,xq,yq);
+vq = griddata(mod1,mod2,swept_power,xq,yq);
 mesh(xq,yq,vq)
 hold on
-scatter3(mod1, mod2, swept_time);
+scatter3(mod1, mod2, swept_power);
 hold on
 xlabel("parasitic drag modification");
 ylabel("induced drag modification");
-zlabel("time, seconds");
+zlabel("power, watts");
 
 %runway length
 nexttile

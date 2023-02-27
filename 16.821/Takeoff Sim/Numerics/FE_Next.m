@@ -46,7 +46,10 @@ x_next = x + dxdt*dt;
 dydt_next = dydt + d2ydt2*dt;
 y_next = y + dydt*dt;
 
+%% Calculate Power
+instaPower = FT*dxdt*cos(alpha) + FT*dydt*sin(alpha);
+
 %% Return Statement
-U_next = [t_next; x_next; y_next; dxdt_next; dydt_next];
+U_next = [t_next; x_next; y_next; dxdt_next; dydt_next; instaPower];
 
 end
