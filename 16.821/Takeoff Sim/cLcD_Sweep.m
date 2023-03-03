@@ -9,7 +9,7 @@ swept_xspeed = []; swept_yspeed = []; swept_power = [];
 %mod = [.8, .9, 1, 1.1, 1.2, 2, 3, 4, 4.5];
 high = 3;
 low  = .8;
-size = 30;
+size = 100;
 mod1 = (high-low).*rand(size,1) + low;
 mod2 = (high-low).*rand(size,1) + low;
 clear high low
@@ -46,8 +46,8 @@ end
 
 clear i size
 %% Plots
-h1 = figure(1);
-tiledlayout(2,2)
+h1 = tiledlayout(2,2);
+title(h1,'Fixed Thrust Takeoff Simulation')
 [xq,yq] = meshgrid(-5:.1:5, -5:.1:5);
 
 %time
@@ -59,7 +59,7 @@ scatter3(mod1, mod2, swept_power);
 hold on
 xlabel("parasitic drag modification");
 ylabel("induced drag modification");
-zlabel("power, watts");
+zlabel("power consumed, watts");
 
 %runway length
 nexttile
