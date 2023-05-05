@@ -13,7 +13,8 @@ clear l minF
 rho_A = 1.225;  %kg/m^3
 rho_W = 997;    %kg/m^3
 S = 1.5;        %m^2
-m = 6.581;      %kg
+%m = 6.581;      %kg
+m = 9.5; %real kg
 
 % Fuselage Drag (hard-coded)
 alpha   = [0, 2, 3]; %pre-plane angle, planing angle, climb angle
