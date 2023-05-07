@@ -178,11 +178,11 @@ rudder = np.interp(total_steps, time_rx, rudder, left=0, right=0)
 #Calibrate airspeed
 air_cal = air_indicated
 for j in range(len(air_indicated)):
-    if air_indicated[j] > 25:
+    if air_indicated[j] > 11.18:
         air_cal[j] = air_indicated[j] * 1.035
-    elif air_indicated[j] > 15:
+    elif air_indicated[j] > 6.71:
         air_cal[j] = air_indicated[j] * 1.06
-    elif air_indicated[j] > 10:
+    elif air_indicated[j] > 4.47:
         air_cal[j] = air_indicated[j] * 1.11
     else:
         air_cal[j] = air_indicated[j]
