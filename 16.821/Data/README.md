@@ -1,6 +1,8 @@
 # Avionics Data Processing
 ## Summary
 
+Read the more specific readme [here.](https://docs.google.com/document/d/1m3ldarUdi4AzhYiZVtuyyFsvVfA2kI1WpaGLP2vG5bs/edit?usp=sharing)
+
 contact me at [amiramalik.com](http://amiramalik.com/about-me/) for more information if needed.
 
 The Data_Analysis has all of the AABV files for every test we did, as well as matlab files to process & visualize the data.
