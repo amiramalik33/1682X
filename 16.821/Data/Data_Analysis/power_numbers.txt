@@ -1,0 +1,11 @@
+Energy, in Watt-Hours
+FLIGHT1:
+Takeoff: 5.00
+Climb: 5.64
+Cruise: 7.75
+
+FLIGHT3:
+Takeoff: 1.64
+Climb: 2.36
+Cruise: 7.29
+Important: the third flight was about half the altitude, so half the climbing, and was a quicker takeoff into the wind as opposed to a downwind takeoff. 
